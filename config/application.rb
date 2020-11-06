@@ -17,3 +17,10 @@ module Studymanagement
     # the framework and any gems in your application.
   end
 end
+
+module App
+  class Application < Rails::Application
+    config.i18n.default_locale = :ja
+    config.time_zone = 'Tokyo'
+  end
+end
