@@ -56,3 +56,4 @@ gem "simple_calendar", "~> 2.0"
 gem 'kaminari'
 gem 'rails-i18n'
 gem 'devise'
+gem 'better_errors'
