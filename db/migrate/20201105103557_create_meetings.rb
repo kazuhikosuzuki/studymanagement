@@ -4,7 +4,7 @@ class CreateMeetings < ActiveRecord::Migration[6.0]
       t.string :category
       t.datetime :start_time
       t.datetime :finish_time
-
+      t.references :user,     foreign_key: true
       t.timestamps
     end
   end

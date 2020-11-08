@@ -4,8 +4,8 @@ class MeetingsController < ApplicationController
   # GET /meetings
   # GET /meetings.json
   def index
-    @meetings = Meeting.page(params[:page]).order(start_time: :asc).per(3)
-
+    # @meetings = Meeting.page(params[:page]).order(start_time: :asc).per(3)
+    @meetings = Meeting.where(user_id:current_user)
   end
 
   # GET /meetings/1
@@ -70,6 +70,6 @@ class MeetingsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def meeting_params
-      params.require(:meeting).permit(:category, :start_time, :finish_time)
+      params.require(:meeting).permit(:category, :start_time, :finish_time).merge(user_id: current_user.id)
     end
 end

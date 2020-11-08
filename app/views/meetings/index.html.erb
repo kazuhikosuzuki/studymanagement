@@ -24,7 +24,7 @@
     <% end %>
   </tbody>
 </table>
-ページ<%= paginate(@meetings) %>
+<%# ページ<%= paginate(@meetings) %> 
 <br>
 <%= month_calendar events: @meetings do |date, meetings| %>
   <%= date.day %>

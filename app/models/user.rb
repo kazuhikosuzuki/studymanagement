@@ -4,6 +4,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :finish_time, presence: true
-  has_many :meeting
+  has_many :meetings
 end
