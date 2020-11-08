@@ -7,9 +7,9 @@
 
 <p>
   <strong>Start time:</strong>
-  <%= @meeting.start_time %>
+  <%= @meeting.start_time.strftime("%Y-%m-%d %H:%M:%S")%>
   <strong>finish time:</strong>
-  <%= @meeting.finish_time %>
+  <%= @meeting.finish_time.strftime("%Y-%m-%d %H:%M:%S") %>
 </p>
 
 <%= link_to 'Edit', edit_meeting_path(@meeting) %> |

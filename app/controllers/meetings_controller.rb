@@ -5,7 +5,7 @@ class MeetingsController < ApplicationController
   # GET /meetings.json
   def index
     # @meetings = Meeting.page(params[:page]).order(start_time: :asc).per(3)
-    @meetings = Meeting.where(user_id:current_user)
+    @meetings = Meeting.where(user_id:current_user).page(params[:page]).order(start_time: :asc).per(3)
   end
 
   # GET /meetings/1
