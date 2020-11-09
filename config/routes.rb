@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   devise_for :users
   resources :meetings
   root to: "messages#index"
+  resources :users, only: [:edit, :update]
  resources :qualifications do
  end
 
