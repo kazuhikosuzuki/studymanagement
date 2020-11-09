@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :meetings
   root to: "messages#index"
   resources :users, only: [:edit, :update]
-  resources :rooms, only: [:new, :create]
+  resources :rooms, only: [:index, :new, :create]
  resources :qualifications do
  end
 
