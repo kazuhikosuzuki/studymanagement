@@ -41,6 +41,7 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'rubocop', require: false
 end
 
 group :test do
@@ -49,6 +50,7 @@ group :test do
   gem 'selenium-webdriver'
   # Easy installation and use of web drivers to run system tests with browsers
   gem 'webdrivers'
+  gem 'rspec-rails', '~> 3.6'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -59,3 +61,5 @@ gem 'kaminari'
 gem 'rails-i18n'
 gem 'devise'
 gem 'pry-rails'
+gem 'mini_magick'
+gem 'image_processing', '~> 1.2'
