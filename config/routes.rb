@@ -1,10 +1,10 @@
 Rails.application.routes.draw do
-  root to: "meetings#index"
+  root to: 'meetings#index'
   devise_for :users
   resources :meetings
   resources :qualifications
-  resources :users, only: [:edit, :update]
-  resources :rooms, only: [:index, :new, :create, :destroy] do
-    resources :messages, only: [:index, :create]
+  resources :users, only: %i[edit update]
+  resources :rooms, only: %i[index new create destroy] do
+    resources :messages, only: %i[index create]
   end
 end
