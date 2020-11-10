@@ -1,29 +1,18 @@
 class MeetingsController < ApplicationController
-  before_action :set_meeting, only: [:show, :edit, :update, :destroy]
+  before_action :set_meeting, only: %i[show edit update destroy]
 
-  # GET /meetings
-  # GET /meetings.json
   def index
-    # @meetings = Meeting.page(params[:page]).order(start_time: :asc).per(3)
-    @meetings = Meeting.where(user_id:current_user).page(params[:page]).order(start_time: :asc).per(3)
+    @meetings = Meeting.where(user_id: current_user).page(params[:page]).order(start_time: :asc).per(3)
   end
 
-  # GET /meetings/1
-  # GET /meetings/1.json
-  def show
-  end
+  def show; end
 
-  # GET /meetings/new
   def new
     @meeting = Meeting.new
   end
 
-  # GET /meetings/1/edit
-  def edit
-  end
+  def edit; end
 
-  # POST /meetings
-  # POST /meetings.json
   def create
     @meeting = Meeting.new(meeting_params)
 
@@ -38,8 +27,6 @@ class MeetingsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /meetings/1
-  # PATCH/PUT /meetings/1.json
   def update
     respond_to do |format|
       if @meeting.update(meeting_params)
@@ -52,8 +39,6 @@ class MeetingsController < ApplicationController
     end
   end
 
-  # DELETE /meetings/1
-  # DELETE /meetings/1.json
   def destroy
     @meeting.destroy
     respond_to do |format|
@@ -63,13 +48,12 @@ class MeetingsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_meeting
-      @meeting = Meeting.find(params[:id])
-    end
 
-    # Only allow a list of trusted parameters through.
-    def meeting_params
-      params.require(:meeting).permit(:category, :start_time, :finish_time).merge(user_id: current_user.id)
-    end
+  def set_meeting
+    @meeting = Meeting.find(params[:id])
+  end
+
+  def meeting_params
+    params.require(:meeting).permit(:category, :start_time, :finish_time).merge(user_id: current_user.id)
+  end
 end
