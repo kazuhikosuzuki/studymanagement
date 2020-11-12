@@ -66,4 +66,7 @@ gem 'mini_magick'
 gem 'pry-rails'
 gem 'rails-i18n'
 gem 'simple_calendar', '~> 2.0'
-
+gem "aws-sdk-s3", require: false
+group :production do
+  gem 'rails_12factor'
+end
