@@ -57,3 +57,4 @@ class MeetingsController < ApplicationController
     params.require(:meeting).permit(:category, :start_time, :finish_time).merge(user_id: current_user.id)
   end
 end
+
